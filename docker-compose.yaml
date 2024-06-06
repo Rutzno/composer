@@ -1,4 +1,3 @@
-# Add your code below
 version: "3.1"
 services:
   mongodb:
@@ -11,3 +10,13 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
     env_file:
       - .env
+    volumes:
+      - mongo-data:/data/db
+    networks:
+        - hyper-task-manager-network
+
+volumes:
+  mongo-data:
+
+networks:
+  hyper-task-manager-network:
