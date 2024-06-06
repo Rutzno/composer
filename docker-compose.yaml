@@ -13,7 +13,7 @@ services:
     volumes:
       - mongo-data:/data/db
     networks:
-        - hyper-task-manager-network
+      - hyper-task-manager-network
 
   hyper-service:
     build:
@@ -27,6 +27,12 @@ services:
       MONGO_PORT_NUMBER: 27017
     env_file:
       - .env
+    ports:
+      - "8000:8000"
+    networks:
+      - hyper-task-manager-network
+    depends_on:
+      - mongodb
 
 volumes:
   mongo-data:
