@@ -39,3 +39,13 @@ volumes:
 
 networks:
   hyper-task-manager-network:
+
+# Install curl
+#  RUN apt-get update -y && apt-get install curl -y
+# $ docker-compose up --build hyper-service
+
+# Stop the services, delete containers, networks, and volumes;
+# $ docker-compose down -v
+# Remove the hyper-service image from the system.
+# $ docker images
+# $ docker rmi e3a05e3b288c
